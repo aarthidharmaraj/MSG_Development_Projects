@@ -8,7 +8,7 @@ import boto3
 def mock_sftp(sftp_server):
     """This is the fixture for mocking sftp server"""
     print(sftp_server.host)
-    with sftp_server.client("test_user") as client:
+    with sftp_server.client("test_user1") as client:
         sftp = client.open_sftp()
         yield sftp
 
