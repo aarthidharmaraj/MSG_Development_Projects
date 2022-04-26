@@ -11,7 +11,7 @@ config.read("details.ini")
 class S3Details:
     """This class has the methods for s3 service"""
 
-    def __init__(self, logger):
+    def __init__(self, logger_obj):
         """This is the init method of the class S3Service"""
         self.client = boto3.client(
             "s3",
@@ -19,7 +19,7 @@ class S3Details:
             aws_secret_access_key=config["s3"]["aws_secret_access_key"],
         )
         # self.client=s3_mock()
-        self.logger = logger
+        self.logger = logger_obj
         self.bucket_name = config["s3"]["bucket"]
         self.bucket_path = config["s3"]["bucket_path"]
 
