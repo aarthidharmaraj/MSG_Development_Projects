@@ -1,5 +1,5 @@
 """This module has test scripts for glue and S3 
-without repition use of client connection"""
+without repition use of client details"""
 import os
 import pytest
 import boto3
