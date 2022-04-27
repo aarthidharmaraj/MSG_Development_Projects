@@ -1,0 +1,31 @@
+get tables and change to sql format
+
+create tables.
+
+use .query execution in boto3.
+genertes 2 file in txt and metadata 
+output query file in txt format change that to sql format- rename to sql-make the extension in sql 
+and change that location to 2nd parent folder to bbnn.sql
+and delete that metadata 
+
+create athena client
+query text= show(create table transactions)...
+
+my flow:
+
+get the file out from s3 and read the contents and save it to sql format
+delte the metadata file
+move the save dfile to s3 in the tablename.sql format
+
+correct flow:
+for single file
+rename the txt file alone and throw it to parent folder
+have S3 commands in boto3
+
+first get list of databses available, then go with files in each tables.
+then do it for all the tables available
+get athena sql statement for every table in the account
+store it in sql
+start query execution, get the output, Rename the output, 
+
+
