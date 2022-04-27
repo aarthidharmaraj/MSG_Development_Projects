@@ -1,0 +1,29 @@
+input crawler name from csv file .
+search it in json file(definition)-exixting crawlers .
+update the database name.... if given in definition  .
+Use that definition to create the crawler by filtering out required arguments only .
+pass those filtered to create crawler method .
+
+exception:
+general exception .
+
+filter out from the list, and pass that to create crawler method
+
+dict
+match the keyword and key and fetch the values
+
+pass the dictionary as keyword arguments
+2nd
+Identify the keyword arguments for the create crawler from the definition
+usee those keyword arguments 
+
+implementation- glue crawler
+get the keyword details directly from the create crawler or
+extract the arguments and pass to the tuple.....
+
+for updating json, if all the details are given,then only update 
+or else retain with the previous datas in json and proceed
+
+
+
+
