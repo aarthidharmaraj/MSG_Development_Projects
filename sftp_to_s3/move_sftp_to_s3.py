@@ -23,9 +23,9 @@ class MoveSftpToS3:
     def __init__(self, logger):
         """This is the init method for the class of MoveFileSftpToS3"""
         self.logger = logger
-        self.sftp_conn = SftpConnection(logger)
-        self.s3_client = S3Details(logger)
-        # self.local = MoveSftpToS3Local(logger)
+        # self.sftp_conn = SftpConnection(logger)
+        # self.s3_client = S3Details(logger)
+        self.local = MoveSftpToS3Local(logger)
         self.sftp_path = config["SFTP"]["sftp_path"]
 
     def move_file_to_s3(self):
@@ -51,11 +51,11 @@ class MoveSftpToS3:
                     + "/pt_day="
                     + date_object.strftime("%d")
                 )
-                self.sftp_conn.get_file(file_name, partition_path,sftp_source)
-                self.s3_client.upload_file(file_name, partition_path, sftp_source)
-                # self.local.upload_file_s3_local(file_name, partition_path, sftp_source)
-                rename = self.sftp_conn.rename_file(file_name)
-                # rename = self.local.rename_file_sftp_local(file_name)
+                # self.sftp_conn.get_file(file_name, partition_path,sftp_source)
+                # self.s3_client.upload_file(file_name, partition_path, sftp_source)
+                self.local.upload_file_s3_local(file_name, partition_path, sftp_source)
+                # rename = self.sftp_conn.rename_file(file_name)
+                rename = self.local.rename_file_sftp_local(file_name)
                 print("The file has been uploaded to s3 and rename in sftp path", rename)
                 self.logger.info("The file has been uploaded to s3 and rename in sftp path")
                 return "success"
